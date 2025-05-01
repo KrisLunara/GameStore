@@ -5,19 +5,35 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
 body
   nav
-    div.title Game Store
+    div.title
+      a(href="/") Game Store
+      //TODO replace this with an image
 
     div.nav-content
+      //TODO replace placeholders with correct links
+        //link them by filtering them with view all on all games for that platform
       ul
         li
-          a(href="/") Home
+          a(href="#") Nintendo Switch
         li
-          a(href="#") Nintendo
+          a(href="#") Nintendo Switch 2
         li
-          a(href="#") PlayStation
+          a(href="#") PlayStation 4/5
         li
-          a(href="#") Xbox
+          a(href="#") PlayStation 3
+        li
+          a(href="#") Xbox Series X/S
+        li
+          a(href="#") Xbox One
+        li
+          a(href="#") All Games
     div
+      div
+        a(href="/") Track Order
+      div
+        a(href="/login") Login
+        br
+        a(href="/register") Register
   div.container
     div.content-container
       block content

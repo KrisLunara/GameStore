@@ -1,0 +1,20 @@
+extends ../layout
+
+block content
+    div.content
+        div.form-header Staff Login Portal
+        div
+            form(action="/staff-login" method="POST")
+                div.input-container.wide
+                    label(for="email").form-label Email Address
+                    input(type="email" name="email" id="email" required=true)
+                div.input-container.wide
+                    label(for="code").form-label Staff Code
+                    input(type="code" name="code" id="code" required=true)
+                    label(for="password").form-label Password
+                    input(type="password" name="password" id="password" required=true)
+
+
+                button.button.primary(type="submit") Login
+                p
+                a.button(href='/login') Non-staff sign in page

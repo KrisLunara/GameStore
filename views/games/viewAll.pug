@@ -1,0 +1,15 @@
+extends ../layout
+//TODO finish card for viewall
+block content
+    include ../mixins/gameCard
+    div
+        //header
+        div Latest Games
+        div Search Games
+            //TODO link this to the search function
+    ul
+        //game lists
+        each game in games
+            //TODO connect this to db when done
+            li
+                +gameCard(game)

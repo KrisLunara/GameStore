@@ -1,0 +1,6 @@
+extends ../layout
+
+block content
+    include ../mixins/gameForm
+        div.content
+            +gameForm(game, genre, platform, `/games/${game.id}/edit`, `games/${game.id}/delete`,`games/${game.id}`, 'Update')

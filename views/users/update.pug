@@ -1,0 +1,6 @@
+extends ../layout
+
+block content
+    include ../mixins/userForm
+        div.content
+            +userForm(user, 'Register', `/user/${user.id}/update`, `/user/${user.id}`, `/user/${user.id}/delete`)

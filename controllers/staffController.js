@@ -1,21 +1,16 @@
-const {User} = require('../models/user');
+const {Staff} = require('../models/staff');
 const md5 = require('md5');
 const passport = require('passport');
 
 module.exports.renderRegistrationForm = async function(req, res){
-    const user = {
-        first_name: '',
-        last_name: '',
-        email: '',
-        password: '',
-    }
-    res.render('users/register', {user});
+    res.render('staff/register');
 }
 
 module.exports.register = async function(req, res){
-    await User.create({
+    await Staff.create({
         first_name: req.body.first_name,
         last_name:req.body.last_name,
+        code:md5(req.body.password),
         password:md5(req.body.password),
         email:req.body.email,
     });
@@ -23,16 +18,16 @@ module.exports.register = async function(req, res){
 }
 
 module.exports.renderLogin = function(req, res){
-    res.render('users/login');
+    res.render('staff/login');
 }
 
 module.exports.login = passport.authenticate('local', {
     successRedirect: '/',
-    failureRedirect: '/login',
+    failureRedirect: '/staff-login',
     failureMessage: true
 });
 
 module.exports.logout = function(req,res) {
     req.logout();
-    res.redirect('/login');
+    res.redirect('/staff-login');
 }
