@@ -3,24 +3,27 @@ mixin gameForm(game, genre, platform, saveURL, deleteURL,  cancelURL, buttonText
     div.form-container
         form(action=saveURL method='post')
             div.form-input
-                label(for='game_name') game Name
-                input(type='text' id='game_name' name='game_name' value=game.game_name)
+                label(for='title') Title
+                input(type='text' id='title' name='title' value=game.title)
 
+            div.form-row
                 div.form-input
-                    label(for='platform') Platform
-                    select(id='platform' name='platofrom')
+                    label(for='platform').form-label Platform
+                    select(id='platform' name='platform')
                         each platform in platforms
                             option(value=platform selected= ([platform] === game.platform)) #{platform}
-
+                div.form-input
+                    label(for='genre').form-label Genre
+                    select(id='genre' name='genre')
+                        each genre in genres
+                            option(value=genre selected= (genre===game.genre)) #{genre}
             div.form-input
-                label(for='genre') Genre
-                select(id='genre' name='genre')
-                    each genre in genres
-                        option(value=genre selected= (genre===game.genre)) #{genre}
+                label(for='trailer') Trailer
+                input(type='text' id='trailer' name='trailer' value=game.trailer placeholder='youtube-nocookies.com/...')
 
             div.form-input
                 label(for='description') Description
-                textarea(id='description' name='description' rows=10 cols=80) #{game.description}
+                textarea(id='description' name='description' rows=10 cols=80 placeholder='Game Description provided by publishers...') #{game.description}
 
             div.form-buttons
                 button.button.primary(type="submit") #{buttonText}

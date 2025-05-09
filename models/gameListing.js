@@ -16,8 +16,10 @@ module.exports = (sequelize, DataTypes) => {
 
     Game.init({
         //TODO finish game cols
-        name: DataTypes.STRING,
-        devs: DataTypes.STRING,
+        title: DataTypes.STRING,
+        description: DataTypes.STRING,
+        platform: DataTypes.STRING,
+        genre: DataTypes.STRING,
         publisher: DataTypes.STRING,
         stock: DataTypes.INTEGER,
         friendlyPublishedDate: {

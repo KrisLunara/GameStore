@@ -1,6 +1,6 @@
 extends ../layout
 
 block content
+    h1 Add a New Game
     include ../mixins/gameForm
-        div.content
-            +gameForm(game, genre, platform, `/games/add`, null,`/games`, 'Add')
+    +gameForm(game, genre, platform, `/games/add`, null,`/games`, 'Add')
